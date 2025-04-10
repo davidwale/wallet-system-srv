@@ -14,7 +14,7 @@ export class User {
   @Column()
   fullName: string;
 
-  @Column()
+  @Column({ nullable: true })
   password: string;
 
   @OneToMany(() => Wallet, (wallet) => wallet.user)
@@ -47,7 +47,7 @@ export class User {
   @BeforeInsert()
   @BeforeUpdate()
   async hashPassword() {
-    if (this.password) {
+    if (this.password && !this.password.startsWith('$2b$')) {
       this.password = await bcrypt.hash(this.password, 10);
     }
   }
