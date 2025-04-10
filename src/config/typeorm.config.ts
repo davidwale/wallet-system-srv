@@ -19,4 +19,7 @@ export default new DataSource({
   entities: [User, Wallet, Transaction],
   migrations: ['src/database/migrations/*.ts'],
   synchronize: false, 
+  ssl: {
+    rejectUnauthorized: false, 
+  },
 });

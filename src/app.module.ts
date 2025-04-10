@@ -29,6 +29,9 @@ import { WalletIdService } from './wallet/wallet-id.service';
         synchronize: configService.get('DB_SYNCHRONIZE', false),
         logging: configService.get('DB_LOGGING', true),
         autoLoadEntities: true, 
+        ssl: {
+          rejectUnauthorized: false,
+        },
       }),
       inject: [ConfigService],
     }),
