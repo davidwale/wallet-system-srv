@@ -19,7 +19,7 @@ import { WalletIdService } from './wallet/wallet-id.service';
     PassportModule.register({ defaultStrategy: 'google' }),
     TypeOrmModule.forRootAsync({
       useFactory: (configService: ConfigService) => ({
-        type: 'mysql',
+        type: 'postgres',
         host: configService.get('DB_HOST'),
         port: configService.get('DB_PORT'),
         username: configService.get('DB_USER'),
