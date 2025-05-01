@@ -125,7 +125,7 @@ FRONTEND_URL=http://localhost:5173
 
     Copy
 
-    git clone https://github.com/davidwale/credpal-srv.git
+    git clone https://github.com/davidwale/wallet-system-srv.git
     cd credpal-server
 
 2.  Install dependencies:
